@@ -880,7 +880,7 @@ body::after {
 
         <!-- AI THINKING -->
         <div class="ai-thinking" id="thinking">
-          <div class="thinking-label">Claude AI 正在分析中<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span></div>
+          <div class="thinking-label">分析中<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span></div>
           <div class="thinking-bar"><div class="thinking-fill"></div></div>
         </div>
 
@@ -930,7 +930,7 @@ body::after {
 
           <!-- AI ANALYSIS -->
           <div id="ai-analysis" style="margin-top:12px;display:none">
-            <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Claude AI 分析說明</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">分析說明</div>
             <div id="ai-analysis-text" style="font-family:var(--mono);font-size:11px;color:var(--dim);line-height:1.7;background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:10px"></div>
           </div>
 
@@ -949,7 +949,7 @@ body::after {
         </div>
         <div class="log-body" id="log-body">
           <div class="log-entry system"><span class="ts">[系統]</span> Trace Agent 已啟動，等待掃描指令...</div>
-          <div class="log-entry info"><span class="ts">[系統]</span> Claude API 連線成功</div>
+          <div class="log-entry info"><span class="ts">[系統]</span> API 連線成功</div>
           <div class="log-entry info"><span class="ts">[系統]</span> 語意比對引擎就緒</div>
           <div class="log-entry info"><span class="ts">[系統]</span> 隱藏內容掃描器就緒</div>
           <div class="log-entry info"><span class="ts">[系統]</span> 沙盒攔截機制就緒</div>
@@ -1115,9 +1115,9 @@ async function runScan() {
     addLog('✓ 未發現隱藏文字異常', 'success');
   }
 
-  // Step 2: Call Claude API
+  // Step 2: Call API
   await delay(400);
-  addLog('呼叫 Claude API 進行語意分析...', 'info');
+  addLog('呼叫 API 進行語意分析...', 'info');
 
   let simScore = 0.5;
   let aiAnalysis = '';
@@ -1157,7 +1157,7 @@ similarity 是語意相似度（0~1），越高代表越符合用戶意圖。
 
     simScore = parsed.similarity;
     aiAnalysis = parsed.analysis;
-    addLog('Claude API 回應完成', 'success');
+    addLog('API 回應完成', 'success');
 
   } catch (e) {
     // Fallback: simple keyword analysis
