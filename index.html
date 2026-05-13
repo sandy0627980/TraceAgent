@@ -889,11 +889,11 @@ body::after {
 
           <!-- HIDDEN CONTENT RESULT -->
           <div class="hidden-result" id="hidden-result">
-            <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">③ 隱藏內容掃描結果</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px"> 隱藏內容掃描結果</div>
             <div id="hidden-tags"></div>
             <div id="inject-found-block" style="display:none">
               <div class="inject-found">
-                <div class="inject-found-title">⚠ 偵測到隱藏注入指令</div>
+                <div class="inject-found-title"> 偵測到隱藏注入指令</div>
                 <div class="inject-found-text" id="inject-found-text"></div>
               </div>
             </div>
@@ -988,14 +988,14 @@ body::after {
     </div>
     <div class="modal-row">
       <span class="k">風險等級</span>
-      <span class="v danger" id="m-risk">🔴 CRITICAL</span>
+      <span class="v danger" id="m-risk"> CRITICAL</span>
     </div>
     <div class="modal-row">
       <span class="k">指令來源</span>
       <span class="v warn" id="m-source">—</span>
     </div>
     <div class="modal-btns">
-      <button class="modal-btn block" onclick="blockAction()">🛑 封鎖此動作</button>
+      <button class="modal-btn block" onclick="blockAction()">封鎖此動作</button>
       <button class="modal-btn allow" onclick="allowAction()">允許（風險自負）</button>
     </div>
   </div>
@@ -1110,9 +1110,9 @@ async function runScan() {
   const hasInject = injectOn && inject.length > 0;
   if (hasInject) {
     injectCount++;
-    addLog('⚠ 偵測到隱藏注入指令！正在標記...', 'danger');
+    addLog('偵測到隱藏注入指令！正在標記...', 'danger');
   } else {
-    addLog('✓ 未發現隱藏文字異常', 'success');
+    addLog('未發現隱藏文字異常', 'success');
   }
 
   // Step 2: Call API
@@ -1294,7 +1294,7 @@ function showModal(goal, action, sim, source) {
   document.getElementById('m-action').textContent = action;
   document.getElementById('m-sim').textContent = sim.toFixed(2) + '（門檻：0.72）';
   document.getElementById('m-source').textContent = source;
-  document.getElementById('m-risk').textContent = sim < 0.2 ? '🔴 CRITICAL' : '🟠 HIGH';
+  document.getElementById('m-risk').textContent = sim < 0.2 ? ' CRITICAL' : ' HIGH';
   document.getElementById('modal').classList.add('show');
 }
 
